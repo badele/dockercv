@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/badele/dockercv/compare/v1.2.0...v1.3.0) (2026-03-20)
+
+
+### Features
+
+* update packages ([#8](https://github.com/badele/dockercv/issues/8)) ([413bb9d](https://github.com/badele/dockercv/commit/413bb9d09e90894615912fe96c584ee6ffefa764))
+
 ## [1.2.0](https://github.com/badele/dockercv/compare/v1.1.2...v1.2.0) (2026-03-20)
 
 
