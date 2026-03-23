@@ -1,0 +1,15 @@
+─ Outils utilisés ────────────────────────────────────────────────────────────── | !V1; !TW80/80 !NL16; 1:Fk, BFFFFFF; 
+                                                                                 | 
+  Ce  Curriculum Vitae  a  été  crée  avec  une  majorité  de mes  contributions | 
+  personnelles, devéloppé principallement en Go.                                 | 
+                                                                                 | 
+  neotex            * Nouveau format ANSI                                        | 
+  splitans          * Lecteur de fichier ANSI ou Neotex                          | 
+  ansi-compositor   * Compositeur ANSI                                           | 
+  termfolio         * Ce visualisateur                                           | 
+  dockercv          * Les sources de ce Curriculum Vitae                         | 
+  icy-draw          Outil de modelisation ANSI                                   | 
+  chafa             Conversion d'image vers ANSI                                 | 
+  bit               Fonte ANSI                                                   | 
+                                                                                 | 
+  * Contribution personnelle                                                     | 
