@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/badele/dockercv/compare/v1.5.0...v1.6.0) (2026-03-23)
+
+
+### Features
+
+* add printable webpage ([#13](https://github.com/badele/dockercv/issues/13)) ([c40c36c](https://github.com/badele/dockercv/commit/c40c36ce48d7848544dd00fbe1ece59fd431b96e))
+
 ## [1.5.0](https://github.com/badele/dockercv/compare/v1.4.0...v1.5.0) (2026-03-22)
 
 
