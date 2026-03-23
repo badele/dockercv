@@ -113,6 +113,10 @@ run = '''
 mise run generate-page journal.html "assets/newspaper/fr/journal.neo"
 mise run generate-page experiences.html "assets/experiences/fr/experiences.neo"
 mise run generate-page projets.html "assets/projects/fr/projets.neo"
+# BW
+mise run generate-page journal-fr-bw.html "assets/newspaper/fr-BW/journal.neo"
+mise run generate-page experiences-fr-bw.html "assets/experiences/fr-BW/experiences.neo"
+mise run generate-page projets-fr-bw.html "assets/projects/fr-BW/projets.neo"
 splitans -f neotex -F html-pack -V "assets/index/index.neo"
 '''
 quiet = true

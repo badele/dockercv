@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>splitans export</title>
+  <style>
+    :root { --bg: #000; --fg: #c0c0c0; }
+    @font-face {
+      font-family: 'Web437_ToshibaSat_8x14';
+      src: url(data:font/woff;base64,d09GRgABAAAAACWgAA4AAAAAZWgAAgACAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAlhAAAABwAAAAch540n0dERUYAACVsAAAAGAAAABwAFQAUT1MvMgAAAbQAAABKAAAAYG/VEkBjbWFwAAACZAAAA1IAAASqH2eTCmN2dCAAAAW4AAAABAAAAAQALgN3Z2FzcAAAJWQAAAAIAAAACP//AANnbHlmAAAH/AAAFzEAAE3wv7D/m2hlYWQAAAFEAAAANgAAADYPS3cEaGhlYQAAAXwAAAAcAAAAJAfSAl1obXR4AAACAAAAAGIAAAJKG1gSimxvY2EAAAW8AAACPgAAAkSwCMQsbWF4cAAAAZgAAAAaAAAAIAFaARBuYW1lAAAfMAAAAmMAAAVqHQmmIHBvc3QAACGUAAADzwAABsIrf4S0AAEAAAABAABG0QcUXw889QALBXgAAAAA0jIOHAAAAADa2iKLAAD/OAMgBLAAAAAIAAIAAAAAAAB4nGNgZGBg2fDfgoGBWYGBAUwyMqACFgBAcAI4eJxjYGRgYFRkeMBgwQACTAwIoAciAB/GAWwAAHicY2BhVmCcwMDKwMBawVrBwMC0B0YzpDCpMYAAJwMMMDMggTC9ID2GBgYGtWyWDf8tGBhYNjCcAIkDhYC6mV8AKQUGRgAiowyMAAB4nGNWYNBjVmBggGEkkMJAKkDWcQLISwGLnWBgYNTBbiJQ/ASZdiHbmQI1Cx2cQCJxA4Q8NlekQNWQExqwMCBVHzaA3RdgUUYdkN9hGCEHDl2oPlxs3IBxAl73YAAAtQwW+gAAeJzN1GlQ1VUYx/Ev/BEXQFERARHuvXD+iOKOC3hVxA03xAVcUXaVxQ1RURQyLbIsyizaiEJFhUoJEkGKJszRphmpUfEeuNya3jfNNDXNcDv9QYdxaup1z8yZc553nznP7xxA4/EKxIXe43mjc+nr3bRSY6+gBHeCKKaKC1RTSx3XaeELbnOHdh7QyY/8zK/8Tg/K5TXtrFauVWkXtcvaNa1Ba9XatK9NFpPVVGyqNp8zX7IEWIIt4ZY4S6olM8Q1xDvELBCuwlN4Cx/hJwJFqIgQkcIqckWJOClKxUvirKgUtaJONImbok18Ix7pVj1Gj9VT9HQ9S89RqldOZZ/vCldpoMnwtfX7uvmJX/iNP/7hqzd8Xz3lKzN8/pagJ76MPp/pX3wJ/b6yv/k69Oh+X6ae3etTPyiH6lZdyqY61AN1X7Wre+qOuqVa1eeqRd1UzapJNSrdqTstTj+nr9PH6eX0cLr0qJ4/HVWO0444h7k7qjvMft1eb6+xn7EX2PO7Hnbd7WqWXbJTfi/vyW/lXXlbtsobsk7WyHJ5Sp6QxbJIFso8mSaTZZJMlPEyTlptnbZHtg5bs+2GrdHWYEy7gv9zuRiJdGOAkcKBDGIwQ/DAEy+G4sowvBnOCEbiwyh8GY0f/gQwxsjvWCO1wZgwYyGEUAQ6YYwjnPFMIIKJTGIyU5jKNKYTyQxmMovZRBHNHKzMZR7ziWEBsSxkEYtZwlLiWMZyVrCSVcSzmgTWsJZ1rCeRJDawkU1sZgtbSWYb20khlTTSySCTLHawk11kk0MueexmD3vZx37yOUABBznEYQo5wlGKOMZx49WVGBfgbizNbYD7wEGDh3h4eg11HeY9fMRIn1G+o/38A8YEjg0KNpktIaFCDxsXPn5CxMRJk6dMnTY9csbMWbOjoudY586bH7MgduGixUuWxi1bvmLlqvjVCWvWrlufmLRh46bNW7Ymb9uekpqWnpGZtWPnruyc3Lzde/bu259/oODgocOFR44WHTteXHLujfK33n7n3fcrKj/gw/MXL1RfunK5pvajTz6+eo36Txs+4/SzJ5+79fJ7j0f2Jt+9+LDj1Bnj+CXPl7VU8fqJF9ob71P6Ks88Ndrer+RJvfLfIfgL7HI/MAAAAC4Dd3icDcJLSNtgAADgPP+8kyZNkzSPP8mW5iDFQxml7FBERhGRMoonEemhSBkyPAyRIWWIiBTxUGR4EJExShEPMmTIkDHKkCIeRER6kCHiQUYRKUXKEJl8H4IgyWdjyDbSRv6hEB1BP6BVtI4eoz0MYjlsATvAzrF7XMVTeAHfwnfwc/yOAERADBMFYo5YI+rPmsQFCchXZJHcIHfIFnkDaGCDJMiAN6AEVsAWOAZdyqAy1BRVoXaoU+qa6tMBnaFLdJVu0Cf0PSMyg0yOmWA+MjWmzvxibpkHVmVTbJ4ts+vsD7bDPnEql+bGuSVumzvi2lyfZ/kBPs2P8NN8lW/wJ3xHYIWMMC68F1aFfaEl3IiIaItDYkmsiA2xJf6REAlKo9KsVJO+Sb+la+kxAp+9jhQjy5G9yKMM5bdyUa7IG/KhfCk/KqySVKaUz0pbeYqmou+itWgreqdCNaeW1VX1QL2JqbFsbDa2GTuK9TRPK2gVbVtrarc6raf1ol7VD/QrvW/YxpBRNqrGoXFt9OJhvBBfiDfiZyZmDpp5c8ZcMZtm23ywFCtrTVpz1rq1a51aPRvaSXvUrthr9q7dtruO7eScsjPvrDlfnT3np3PqXDldSEADJmEWFuAM/ARrsAEP4QX8C59czU26w+6kO+suu1vud/fE7XiYZ3hpL++VvEVv09v3zryer/pZf8yf8Mv+nL/0YuBlOUACMTCDVJAPpoPFoB40g05iKDGf2E9chiBMhZNhJfwSNsP+fyvRpQ8AAHic7VxPiFzZWj+3qnua0D2ES3HthDZ0Xy5NGKadRywuPZIJDzEiDyMqIrY8RMQrIiK2unDAgAsbHHBhgwsXDijIw4ALM+MDFza4cOEBFy5scKFglkFwV6uZ7h6/3/fvnHOrOplJJvoWdqVSt6ru/c53vv//boVJeC+E6i+m3wnTsBHe+6QK3/jg04218N8/+Mlb6//xwafTCR2GT6b4eB0ff7rxVnXxwacVPp/Xbb3f1u171W9fnVXfd/Vf0+9cfPu96bcCgQzhi48nZ9PnoQmhn/fzet7wo+56etRd0w5x0L+r82GY7unB5ZOBrn8b10/31h4xXpvhZpiF7bATdkMX7oZ3wzfCnODWANv1223T1v28meJJ7w/pfWXHHVZvullXz/EZ1qtOr45lZRxVp4YHIXS1FQmVi2fyJT0PYpQTLm7JJzHG4eLZdO/y4UCIrjmeM8UNWNGSrWy2oY3Shmd4R5/S+/4uvazTkYCjJY9l6ahLMiUGReFAMcNfELqGwHTdDuF2ha3xk1cCdDwIlNF2ciQgrs5jDkN5sxNCDfIwieRRwMn/dO9RsRkUl+kewdllXAiTTiF1wAqsJv60OGqibHIAAOy4OmCAQvRj5jxhGiYOc1uh5tjVjBk9Z/qZAmWm0FF1agQDPAbMmAJXrLiYnJEshYr3JxCqU71SkGHyEn3eJ54+Jdm7GUJDUl4p+7A4sf6JIB7XP/zso8kRXynXhTg5mu7RGsqdlnFuH+TX81rAjNc90Hcqf7z9Yv0dxYDJSACJpA8qo3LXAxsHAZCMFH2Sr6J0JZ6fhNvhjsmooNSCT0rdtr9f1Z3xOzoJlay8iLBK9xtovyesmQFYMcd1151iSEramWyLIEeVbGYS6dcBgxO6T85Il+6Ed8ZWo+kUXbEeXdWIvHWsSXEwSaAXVegomnTxWNSBcJ+cOZPfUjk7IRonu4I9NHdl4VopXNOjp8+aSi3MOq2LPcRB/yMRipEMh5C6OuBtXZ3TDk3WBaFcf0/IXoR7tr2kd42p1zA9cdUbX+c626s5pUcc7Z62jSsr5dFz5VDdZfoE7TRtV+zlJRrKJpmwcwrH7HGAVSUZr7f1NdpfdTA5I+uoryHT6bdDHULLJK1VVIDSdI9pSfwhzaKNXzwW+b3aqk5VLsRezcM3iWr9nG2qPEwoxOJ2YnedovLa9lWv7+i8KIwRIV8Mkdhlb2nBg+HFf3TFiCckvFPwsq1xfHWu9vVI7OJ1NGe7OKL75ZMVpM/lBjBvOv8VXlcrBIg3/i4fkpkbXwM85gW/ldPMK5cVeksXQ8ZA4kw0QWA1CfQfec2Fq5ytla4V9IjwjTCFHmJkxSCtuJaQnxyFdfHpbROrBQkyccZhT/cI9o7Dnhe4dbaG2wDlVEZdx5F0SOhR+D3jrwlxGJ1fw/RmvtGIPTnzKyYBiyyI3qwfs1o9cw31aDrFJIpLvjqHhbg6jizfkyPXLfgNcKqWUzlAuToOhR7sZJJV60MkS1Sr3mepsDggDiLz9B8ElC0U/5N3/GGKC8j+dmIJWxGCJGs9M7R2GcIGlMgESO0723ZRaEjKObvgaRa3MPbJhPXJ+HWyCaGWcxMmZSFG0f6fPoeyiK9UuLscF6pnc3sgkYj4ol78mxiMQ/YbFmFFRVWPU2giG2ISqkyAKeDxhsQRoD1iCNY+IWTlckC6cOjK0IlHkbjKgCJ64JjXdSG7Nll4d4JNRpchXew6dGYxXadKIl54rkpC1m9InmtIoa9ZGqwvcChO2k9hUiccYPqDn0SHLz6uFiGCDq04Z46lmD0sS9Up2cMFOATdoeNT4AlXz9fR5/t0ncAt49rrZKOUiSQNhRxIrsByoNFXPydBJm2s2SRcbZmLRniAMFtCKNExpj/DeZvpb7abeCdyHoXq5F4znNsc51rI0aagXCyhGPXz6C6kWlw+jEkGVfxyuDtJD9sCrOwrmjYbTNobC68DhHp67AeZum0W1LcFc9EeIpZKNpDMkqNJ4oVFwNki/5g5bjXSrzbDaWtyBtft+BCkVbhsp1ypZRIlbnFmdj4oDOaXGNyoAVUY40JodBquORf4kihUnz7HhZLtIdEoZEZyS8Ymxa8Jm54xSjR2I6qk1s3xO4+LfY8pDwA8eH3dI8MjjA5wNcNcADtxx1E2ORF9Id/IvmFfM9qkjew/WBfpHERmro0QXdZIkVs6zGKCE9j4eoWaefTUpxzQE3UP40d/vGeEe4YnNH6dtR7BCHvizL6xT6X1Dz0H0VhuKRomH5MtXR6M18/8C++sTXB0nbaBvGfhB7JicuApAkMYn8lVnexIi7gEkt7jelIQsIt0A0aEzAelMDAlGR43wft7eS2gbm9Xkmx1ovORvW/K+NnZL/DRsj27Vyep3FeZFPsPCRJ5nD4fi2KpI7oX+HECIJGxhsBQcJLsvPaQ7WXTMVA53lfHpCpxDtrR6urICK9y7U252iyFmAfs1TEuz7+Rn29n67lbL9hTLTtLe6pOlUVCXikujfAS3hJ36ohqD8gIM3Fxq1rQYkUcvcnZh6XhDQK0GM2PZHAlvmzsTLaL0TPyaI6n2POu4FLqY6GLtdVQ9EVMWhbikgtL8NZ1b4ilp89Lf5VyT4kw9GH1GYIMiBe3Jkeg4uWTsPLaBrFPgZteC99xcStCokJhDyVvHHnmwisnn5xfdwPe2DSAtYhlXyQfcnHMGQlZzFTbarOVenB3ZNn4SG3wuVPWuSm5qBuYhEsDH2q4dDlEx8sspaukRCrkF4/YnDssrTikbHZVHit6Gi0z1ZR1UF+U1z7sP5MrzrnVGpNu1NM9OMITRC9kgEs96E0PZC2xBic4EZWEpbpjzbJTl3XHTD61BpCyy2HZFvnDUji5PrKGXD6Ezk/OLp6N4sPOrCoXEAo8NNsCrNro4YTRDEiqV5zzi/Xl1KfMlS0Ds+qPVRcXsAh4ShxR2qwdw0t9Td8W4Z/yS9NGsfIp6dDYymJ/4hkHMIg6UV0iKYKBKdbbRiSXC0kSopg5SlZHi5THa4gtqzk6gOBf3NI1KB+1Ncb1YSliWqwYB0tDki+upCYuEVZDsscGOCD21zwXuZMwr+OaQpTKSfLjlH9wrQhZOmIm9sBkLfpWSvYLWHJlY2S3E0s7s63WVOsth2KKWbwtgRDmsxFlJqgZchpLLePlPjMLvYcxDnK1VMGlgCs2cxBPw0KgobbEypSMk+cZxnTwKASJRD9jOixQrloYHRjEOSffMYxjY6yqu7AqQbQsndxDli8QRKvD8v53wUFE+Z1m1WIhptm+oovy1qD7MnVjU55K3IUv2ICmGY9mwpzaFFW4sgXJunxCQSViXNXPGykzg01HVVZKDpoGweGf2FrYh9UddRstb6Dj6zhCEB5KBs+u53lh717FL+eugwmLfNnxD/vaFOlbDiU1ASQtyWWvVi9jNSR+CM+gc7AjFHcuOPLbyuTF6Nqsoisuy8maXfdy32xSSiKSyQjLeaPVcl7zWl1j38PFw1MViTGckb6YxNWlvsS84YFicXjh/tWzlPtPPKZrdks/PPbB5hOjeV8OtrYS10d+t9A7jmG1HApZie59YDilFrclPiHk/L/GJ0+OwDmv+ci5X9YnS+MztT+Xbd31PplWRnlc056Sfp3WPzyJc1XJXUa35JOj/ZcOQi5bnEO5/and9iS7wzRJJoeMp1gcOOmhoGdeV2pTMVcqM1Fdc0xFGaVaERtktrTjXGwuPIV4cjo3qDH1NEziXzjeU6vvtp2UGbhtxNb3dLTGPV6jUzView0bx0XcOJRVB/XXZ6lOzdJr8taIIfb6iW4p6wdmeWrqs+632qtUAyZ9EagA/rimu1TvPswkp87q3WDHAcrdaO3Egp473uE1QandxnLtIYUu4kZYTkTz43L8ZQ62cHVKisF8EsO7fBK57m1u7zjJc+rb9F2KMj3CtK6mFSCtY6AapoUhsXrhe7d3NZGq0toj8jNNCLO2Nj2V1/mUsLEesAR5a48kk4Ggb1nNJartuJu6Urna7y8bgt713/YSVxeV3D4NXEde5zyGfMHkjJ32sdXaEFPSPqTnYs6LmAY/NCRPEdceDRb8p37zx4h0tc9PO66s3E24wsp6t3rBJfPIcwSnvB5lgTPhYJN3G9igqNUUhnBB9KhI0Ur/OWMb5925mQrbkNIhig1g5pBVHcl8zOv2VCkegROW+jz6GGSNIB4MlvYosjGV2hO8aGVbJNreJ5Ec2MSqHRLHOGidT+U+lw3ptqUaH+9zqcE4T9VG71zlLjYXcMkutF+FjtK7WU9vuXXQkNe4XXnZezTbYp2eLIgbpHB9tSXOGd2mcr35S9erZ7xn70Nxx3e0rrTmRKVesHyut3mdM3UxVfbU7s+kgyZhD5ybDCwMbrRgiaWnf7b2lOvUuymzTn4AdRPMPNTqD7wzN0gY5G4h9Z6lVMeVVEhEDNk68DU8Z7FcFxX4dVKlVjp0eZ3Upkaid75YmU8LAxKKWk2WlbfaIeVoAuGS+DcdwjoXZeFjTgi9GMv5rOQR70o04hVr34Ugbx23zmJG52QKclJb36xx4nDiL9FKc1jO+LgSWmWcThVUaHfk5IG9/PTEQWWwZsrbparddBQtpKDM4waSFOzg4jEXGJEc2QprGa43Uz/HTDCITX6F+IgqBucOUSowaKKdSaNj7VG8eMw9dO/HOLwi/gW0VnM2hoRXTOrJtB7BsZ498epIahdN0cvpNDxANnGalJ7cQlE1//y7YgMFl0dsX++sqkTUbr5gDcdVCfmntQnVji8JN+PzGK77BAab+fMSbnstXEOYa58j2BboG9JHidXGa/U3XANdXgFWZ587LAVkjhhjDln4vTaixTVYu9vpW2LkCLY6ILGhI3KX+U2bZgPY7oj3qcUuc9uw4djEQElOYU6cMz4pr+BzswmSOy7XiMwCiKXI6kViagYbKnVjMKSeT5KN5apPKXNlBUhkLq8DZXNnXwK2+hKVuxL2oEGQg44rcW5X4rwkdyPYwrkCcXf0YbXsLa+SZK+AbrJXkiVqbA5nIbEjYuCsqDPz+lIKQQgp2IqBR4FFAr0uRTBuAEZRl3Jqan3q2MnoTSm1+YPDuL0EI6NcguMk02pXZgeGYHN6HBmCLmk3U1DI5i8jz9GQ9VQ4z2MuJxsygWuVlLGnWNdae8x9BTs6qbEkrCLXmoYc9qbMtY6rTWPp9spTJtpcf0qC/VKYY6lO8x8u0gwyOglHMHdX4LlCorO5kiTOW6nSv2RHX+gzZ9anznxmgkkumeKsBTr6U86PMHMsc5mY2ZnvE7y70v2PV8foUUZ1dh4TPPJ6W+5hXf7Ny1ruZzUndf/hRXBmueRr1WoMxyx0AWdnBZxc+h3WoPUox2pvbEOLOaAihoCNyGOIAs6J+SWN927atNp1NagqQcxqUVKsNDUra1KUl+l8FGa8pW7RiCdartJzJhm9VO99CncenIinGsiGzKFC18nHcnPjnOKrUM667HC9bsVdCvcrLiDCAWdTCj6ZZPXXfGbNCv1lLaZNUbdEmm1t1Q3PU2q5nCRBwfvcUupvSnfO5sx17vGeV03El3cOd44sVbpf6MwLqOPoUY0NvcVx352jwjwjAbfn2kkUTMsZLelpgAVs9aTKgAmyVIfezixHWQPJphCzGoiDXgx+lwXwzfe/mziX1418amd5gl/Mmg7xF0WWVXNU2R0XMpNlI7xz9rM6D8SjWZL/DzIBauQYBs9eQx57NcK1uaZ3PqnKk/tcG1Fd4aySIB9nuVDZA+vyXTKTdXML29MihFEfRe21cEHWTUNRQgyKGNK9F1pP5HnSe3NL89SoqboA1EwK7iwm243UFPIbUDyf10gM1lhYbBVjvR/ny9+b8ppz+Fq72tAudyP9GnHlllpgblNb1dIkSrYDvbddmwTiSYw5YqU0IyzlQw22LEjk0SCOAs4o2vAM5rVnxl9lHv515tu/8iz91zSz/nXcv/Fm7knArTvjGmJ2j5neFwf+sHXirknvfSmEJ6Yx05Ph8+8q4KnTDvFwZ/f5QShmvfVEJGtrLYuTaXeBJfkgkBdL5Z/a0XGajXvZfQf5zFPmH2zGRNx+muCT4aGQ1z9vWjchj57H0bRH0DE7GszXDInoEu+dpXjvQYXKkDxl2hJPvYxHCa3OzdfsZnXua/rZEgvlUplqVY7JtTDLSU7rRE6O0i1uLusHyzBfuydV9At6nx/kyrfc4xD1HjOi3XqXAi7YWgmz1p6qYWYZrhZcjwq9Fs7ArqgcolM//ym3D9UpyeyRzbtP9yDemHn54n2GAR1BB39BV3320fqHQb7jawhXTIbWLU9oIbK/fMIDNBIn8myv9z9YRMmQcv++ggbyvYKAwftFxnG1tfaUNNdhQEv9nB7ngHxrT8kcMxjDhc7ZMDidQDqPDOryCVA2fOy8TqFx0It9kUcWvCS+5Znkcv4MZBG/ojTL1uwF+4tnAIbuSw5L+GC42bkEUdZmHG150T+Kr0VPXEukYBjlnj05T+ThqZxHEnF/UndsmaLcSum0IViY3eDF4aWUVxzuS8nb5Iv3fYOhtRJwEEAKcwgmLc6bn8h5BHNdJRH3LPMsPp/LA2bITwguIkulF2gveNCOZMaslp48K8HFLe0lc23KcODwWzaFYWeExiw9Nh+jODxgEZwKTDkXnEJ0S4DpLNy7EZkPQoe502FL70TguR2jg/KWzuXRBJyPuXW0UgaVTkyWSg0lqgxvGmS5BqewQY4yww/u8T1TbLtZDjNazGtFg6OfU0yz6X0ojkcrjTbC4/JhBB6sAYYH22zDA/QgiHKHj5yPwUTQmOeKM53ZVLmYZ5JhJLk6Xv9QiKI8Z1nbNFnjiEXkbeCbd1mO6Qw7d12ivP1OhR7Y038o+MutH9ATzvIhNRe3VGZdTzdz+nQ5hWgXuFPY77t9Kh6FJWbueiCawOAJ8NTPVbxMakAldFzTJSY7oBVfq/dVkyS552JZY71kPWbVlPEgseWqS4ZV0qbIDQ+ev2Z9mjrsAi/ui7aoh6gGwrhgFbnjh0sjZiuML2wr1BoBL7FHXCwDHz1nUvneNPl2yRowszqYARPZmmZr3FD8GpGtd8DOOSxTVFEX+yR0k5lulYVZzkvrDDlP/W4g4S2QZWKGwob6XJLdNaiz35YhM6GkIhLlBbZnza8HfWv455LCaScZpdOGEr19W0zDhdIkYHiafOZCUhXDV2JL3P9OTNOvsr2k70TqTe5P03eEjX9Xnabr1vk7//b7Xa6v/72Jw3A/fDP8SPix8OPhJ8PPhJ8L3w6/GH45/Gr49fCbMkG20csTPdO7+or3M8Su9ESWOCPtulPJa4+oObsmv9buOb8OZhE8xeLdaJwilVPsXPmnUwmaX+IFP3IhyVb0Ec7HK85Nny99FcL7GX9ejZa/E343/F74/fAH4Q/DH4U/Dn8S/jT8Wfjz8Jfhr8Jfh78Jfxv+Lvx9+Ifwj+Gfwj+Hfwn/Gv4t/Hv4zxfzoLqG/of0XO+lNn4P5+jrbMVxnZ1TZd/zdwh7sZY2GnE8te/0dV/X4aQL5+orPqv0vSVkdXZOhWrumOdpoku4fDxc+/ei0aB8wmDVudxi27pOarT/nEuMyKL8AMGQxsNFKDWTSIvSLqIuE/0kk18GIgD0xj27nYAu49oqjgkH0AI6PnPZeyf8QLgX+vBD4UH44fCj4VvhJ8JPh58NPx9+IfxS+JXwa+E3wm/lc17Fs9H8DBlmI3dBH+r4V02fbOvrjF5RNN2g55QuvFPJa0/vK3tPx3ez7xNlo8/xnY80uODBSH3Lv88+8sMlOo01+Vmu7QdagxkQR3GcHA7JJg5q/1P+u+r3Db7yffSv+psXX+X++1f9jYyv63dbXvV3Y97E7738/+8nrf79pP+r3315A7+VE97I7/m8kd9eMrhf3+9EfY/9DtZr/dbZ/+LvHv0PSv6C2wAAAHicrZPPbtNAEMY/2ym09I+gh4gDh1UvNFIcJ2mkltxKT5UQRUnVXhCRba0Sq65d2ZuoPcIzcODIiQfgjngCxInH4BGQ+LwZWlG1B1BjbfzbmdmZb1ZjAE+cIziY/57ilbCDOj4Ju7iPb8IeGk5DuIa681Z4ASvOZ+F7tP8UXsSC+1B4ibwhvIxH7gvhFfI74VU88xaF19DyPgqvo+79YnWntsTdS6ukYgdNnAu7PPFF2MMAP4RraDpD4QU8dj4I36P9q/AiHrg14SVyXXgZG+6m8Ar5jfAqCve98Bpee8+F19H0vuMAUxikSJBBQ2ETM75j2nIUaNBS7QuUjMgZoxDhgv9H3Kf0DNiVQhdtu3AwNWmSabU507HJi4aa6aJM8kxFF+ooSfWgqbrtLgOPeTZCD1vY5vlD5i4xYc4IIYZchtYd3leHMTjWUW9rWx3m5SSJwmFo1M55h/YBk4zZQMoDBbd6PE1DwpW4/j8V6rPZLlpc/mVLPj0dpqzE928W0p91W12/6svvdO6otVuF3F5rdGOt0fVao6tao3mtq+uat3mTZcJUBme8ooBPNS2GSdu0t+ykjBlizFk/CJLMdNqTVl6M//fUHj3aik/s9ClacpzyqSaw5H7X5i1so1MbV3l8tjyxo6AZUc30iT3dY7U23/u2fjXNmWTPLaUsWejQJDOt9vLT0zwr1a4xRRJNDWfXH07CQu+myYlWvVZb7WdGF1lYucL0eo/xNe3xX8r/dB1YdTH9lVVzBfa78kkhea44uLydWOTFc3XVNQVpEuus1GUQXfhlGFBZcDez9xuo6PMqAHicXZNXc9tGFIXPsQRRpIp7773bAghKoru6u2VL7hUkQAIWCEAolFziEtspb5nUh0wymdRJfkEmr/lLyXMCkrucTHYG+M5i795zF7jAEjTHP8MwUxD/G9yeXkvYwU4q7GKG3cwyxx72so/9XMplXM4VXMlVXM01XMt1XM8N3MhN3Mwt3MptaYYOdEJBFzLoRhY59KAXfejHUizDcqzASqzCaqzBWqzDemzARmzCZmzBVmzDduzATuzCbuzBXuzDfhzAQRzCYRzBUQxAhYY8dBQwiCEMo4hjOI4TOIlTOI0zGMEoxjCOCUxiCmdxDudxARdxCZdxBdO4imuYwSyu4wZu4hZu4w7u4h7u4wEe4hEM7uBO/IC3eIcv8QG+wa/4EW/wGXfhK3yEP/EtfsPf+Avfo4QyPknfo4UKqrDxMR7DwRxcePgOPuYRIESEBDHqWMAinuIJnuE5fsdLvMArvMYf+Jm7uYd7uY/7eYAHeQhf8zCP8Cg+5ABVasxTZ4GDHOIwizyGn/Apj/MEfuFJfI4veIqneYYjHOUYxznBSU7xLM/xPC/wIi/xMq9wmld5jTOc5XXe4E3e4m3e4V3e430+4EM+osESyzRpscIqbTp8zDm6rNGjz4DzDBkxZsI6F7jIJ3zKZ3zO9/iCL/mKr/k+3/At32USzxlIh+C4oCqoCeYFdcGC4KDgkOCwYFFwRHBUcExwQnCyRVX4q8JXFb6q8FWFryp8VeGrCl9V+KrCVxW+qvBVha8qzqcKf1X4DwmOiDpGNWXKqNUMZda2YkOZcao1o2Padpqr+ZGiYriBbSim5cZGxgoix/U9JWpGxUbSEdhO1losu0bNLLmNPVrq0BVYUZosa4Shv+BalTjTVEmQazJ0qnbcWjT9Ba+lSn5sZ0WY6fW2VSmymmk1tZjzw9j2q75nuL2OF1thZJVjx/d6rPnEqRuu5ZUtxfaTyOoLrbrrV52y4Xp+nGsEV0PDjYO2LMXdM5Nqox0GGkIVYqAt8lJoUuhSDEtRlGJQiiEpCkLoMo8mtxekRUFmzss8mnyiyRhN5inIUnUZnJdlaG0h3TVZT74t5JIuLdS2qcysyVL1drDMrMt69Pa5ZGZdbi+0D9jOo7d+t6Dk+uW5TPotG1RaM7fSYhiLeRzZhmkpzXvGnGsyW3Fc1zJL/mKupcL0i2fi0DGqSdBiKOam16Jb6So7Ydm1so5XLyXpprihxLOo5qT9aJSttIHq7UlHlHhdFauWtlBn46ZEQWreWXaTkmJbRmphOkbN98yeWhKJprL6/6PT3v8XU1SYoAAAAAAB//8AAnicY2BkgAAeBhEGFiDNBMSMEAwAAssAKgAAAAEAAAAA2pID9wAAAADSMg4cAAAAANraIos=) format('woff');
+      font-display: swap;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Web437_ToshibaSat_8x14', monospace;
+      font-size: 28px;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: 0;
+      font-variant-ligatures: none;
+      font-feature-settings: 'liga' 0;
+      -webkit-font-smoothing: none;
+      text-rendering: optimizeSpeed;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    #neo-source { display: none; }
+    #ansi-output {
+      white-space: pre;
+      font-family: 'Web437_ToshibaSat_8x14', monospace;
+      font-size: 28px;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: 0;
+      font-variant-ligatures: none;
+      font-feature-settings: 'liga' 0;
+      -webkit-font-smoothing: none;
+      text-rendering: optimizeSpeed;
+      background: #000;
+      color: var(--fg);
+      padding: 12px;
+      overflow: auto;
+    }
+    a { color: inherit; }
+    #options-bar {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 6px 10px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #aaa;
+      border: 1px solid #222;
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: 'Web437_ToshibaSat_8x14', monospace;
+      pointer-events: auto;
+    }
+    #options-bar label { display: inline-flex; align-items: center; gap: 4px; }
+    #options-bar input[type="range"] { accent-color: #666; }
+    .ansi-cell { color: var(--fg, inherit); background: var(--bg, transparent); text-decoration: none; }
+    .ansi-link { text-decoration: none; }
+    .ansi-link:hover {
+      color: var(--hover-fg, var(--fg, inherit));
+      background: var(--hover-bg, #005400);
+    }
+    .ansi-italic { font-style: italic; }
+    .ansi-underline { text-decoration: underline; }
+    .ansi-blink { animation: ansi-blink 1s step-end infinite; }
+    .ansi-dim { opacity: 0.8; }
+    .ansi-hidden { opacity: 0; }
+    @keyframes ansi-blink { 50% { opacity: 0.2; } }
+.Fk { --fg: rgb(0,0,0); }
+.HFk { --hover-fg: rgb(0,0,0); }
+.Fr { --fg: rgb(170,0,0); }
+.HFr { --hover-fg: rgb(170,0,0); }
+.Fg { --fg: rgb(0,170,0); }
+.HFg { --hover-fg: rgb(0,170,0); }
+.Fy { --fg: rgb(170,85,0); }
+.HFy { --hover-fg: rgb(170,85,0); }
+.Fb { --fg: rgb(0,0,170); }
+.HFb { --hover-fg: rgb(0,0,170); }
+.Fm { --fg: rgb(170,0,170); }
+.HFm { --hover-fg: rgb(170,0,170); }
+.Fc { --fg: rgb(0,170,170); }
+.HFc { --hover-fg: rgb(0,170,170); }
+.Fw { --fg: rgb(170,170,170); }
+.HFw { --hover-fg: rgb(170,170,170); }
+.FK { --fg: rgb(85,85,85); }
+.HFK { --hover-fg: rgb(85,85,85); }
+.FR { --fg: rgb(255,85,85); }
+.HFR { --hover-fg: rgb(255,85,85); }
+.FG { --fg: rgb(85,255,85); }
+.HFG { --hover-fg: rgb(85,255,85); }
+.FY { --fg: rgb(255,255,85); }
+.HFY { --hover-fg: rgb(255,255,85); }
+.FB { --fg: rgb(85,85,255); }
+.HFB { --hover-fg: rgb(85,85,255); }
+.FM { --fg: rgb(255,85,255); }
+.HFM { --hover-fg: rgb(255,85,255); }
+.FC { --fg: rgb(85,255,255); }
+.HFC { --hover-fg: rgb(85,255,255); }
+.FW { --fg: rgb(255,255,255); }
+.HFW { --hover-fg: rgb(255,255,255); }
+.Bk { --bg: rgb(0,0,0); }
+.HBk { --hover-bg: rgb(0,0,0); }
+.Br { --bg: rgb(170,0,0); }
+.HBr { --hover-bg: rgb(170,0,0); }
+.Bg { --bg: rgb(0,170,0); }
+.HBg { --hover-bg: rgb(0,170,0); }
+.By { --bg: rgb(170,85,0); }
+.HBy { --hover-bg: rgb(170,85,0); }
+.Bb { --bg: rgb(0,0,170); }
+.HBb { --hover-bg: rgb(0,0,170); }
+.Bm { --bg: rgb(170,0,170); }
+.HBm { --hover-bg: rgb(170,0,170); }
+.Bc { --bg: rgb(0,170,170); }
+.HBc { --hover-bg: rgb(0,170,170); }
+.Bw { --bg: rgb(170,170,170); }
+.HBw { --hover-bg: rgb(170,170,170); }
+.BK { --bg: rgb(85,85,85); }
+.HBK { --hover-bg: rgb(85,85,85); }
+.BR { --bg: rgb(255,85,85); }
+.HBR { --hover-bg: rgb(255,85,85); }
+.BG { --bg: rgb(85,255,85); }
+.HBG { --hover-bg: rgb(85,255,85); }
+.BY { --bg: rgb(255,255,85); }
+.HBY { --hover-bg: rgb(255,255,85); }
+.BB { --bg: rgb(85,85,255); }
+.HBB { --hover-bg: rgb(85,85,255); }
+.BM { --bg: rgb(255,85,255); }
+.HBM { --hover-bg: rgb(255,85,255); }
+.BC { --bg: rgb(85,255,255); }
+.HBC { --hover-bg: rgb(85,255,255); }
+.BW { --bg: rgb(255,255,255); }
+.HBW { --hover-bg: rgb(255,255,255); }
+
+  </style>
+</head>
+<body>
+<pre id="neo-source">
+                                                                                 | !V0.15.1; !W80/80; !N108/108; !P1=#FFFFFF; 1:Fk, Bk, BP1
+    ██████     ██████████  ████  ████  ██████████  ██████████  ██████████        | 
+    ████████   ██████████  ████  ████  ██████████  ██████████  ██████████        | 
+    ████  ████ ████        ████  ████  ████  ████  ████  ████  ██████            | 
+    ████  ████ ████████    ████  ████  ████  ████  ██████████  ██████████        | 
+    ████  ████ ████        ████  ████  ████  ████  ██████████      ██████        | 
+    ██████████ ██████████    ██████    ██████████  ████        ██████████        | 
+    ████████   ██████████    ██████    ██████████  ████        ██████████        | 
+                                                                                 | 
+                  ████                                     ██                    | 
+                    ██  █████  ██ ██  █████  █████   ▀▀██  ██                    | 
+                 ██▄██  ██▄██  ██▄██  ██ ▀▀  ██ ██  ██▀██  ██                    | 
+                 ▀▀▀▀▀  ▀▀▀▀▀  ▀▀▀▀▀  ▀▀     ▀▀ ▀▀  ▀▀▀▀▀  ▀▀                    | 
+                                                                                 | 
+ Edition 2026                                              En poste depuis 1998  | 
+ ──────────────────────────────────────────────────────────────────────────────  | 
+                                                                                 | 
+ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░        █▀▀▀▄  ▄ ▄▄▄  ▄   ▄  ▄▄▄▄    ▄▄▄   | 2:FK, Bk; 39:R0, Fk, BP1
+ ░░░░░░░░░░░░░░░░░   ░░░░░░░░░░░░░░░░░        █▀▀▀▄  █▀     █   █  █   █  █   █  | 2:FK, Bk; 39:R0, Fk, BP1
+ ░░░░░░░░░░░░       ▄       ░░░░░░░░░░        █▄▄▄▀  █      ▀▄▄▄▀  █   █  ▀▄▄▄▀  | 2:FK, Bk; 21:R0; 29:FK; 39:R0, Fk, BP1
+ ░░░░░░░░░   ▄▄▄█████████▄▄   ░░░░░░░░                                           | 2:FK, Bk; 14:R0; 31:FK; 39:R0, Fk, BP1
+ ░░░░░░░  ▄█████████████████▄  ░░░░░░░        ▄▀▀▀▄  █▀▀▀▄  █▀▀▀▀  █      █▀▀▀▀  | 2:FK, Bk; 11:R0; 32:FK; 39:R0, Fk, BP1
+ ░░░░░░  ▄███████████████████▄  ░░░░░░        █▄▄▄█  █   █  █▀▀▀   █      █▀▀▀   | 2:FK, Bk; 10:R0; 33:FK; 39:R0, Fk, BP1
+ ░░░░░  ██████████████████████▄ ░░░░░░        █   █  █▄▄▄▀  █▄▄▄▄  █▄▄▄▄  █▄▄▄▄  | 2:FK, Bk; 9:R0; 33:FK; 39:R0, Fk, BP1
+ ░░░░░ ████████████████████████ ░░░░░░                                           | 2:FK, Bk; 8:R0; 33:FK; 39:R0, Fk, BP1
+ ░░░░░▀ ▄▄▄▄▄▄ ▄▄▀▀▀▀▀ ▄▄▄▄▄▄▄   ░░░░░   POSTE      :     DevOps / SRE / System  | 2:FK, Bk; 7:R0; 34:FK; 39:R0, Fk, BP1
+ ░░░░░░ ▀█▀  ▀    ███      ▀     ░░░░░   VILLE      :             » Montpellier  | 2:FK, Bk; 9:R0; 34:FK; 39:R0, Fk, BP1
+ ░░░░░░▄        ▄▄███▄▄          ░░░░░   EXPERIENCE :       28 years Experience  | 2:FK, Bk; 8:R0; 34:FK; 39:R0, Fk, BP1
+ ░░░░░░███████████████▄███████ █░░░░░░                                           | 2:FK, Bk; 8:R0; 33:FK; 39:R0, Fk, BP1
+ ░░░░░░█████████████████████████░░░░░░                                           | 2:FK, Bk; 8:R0; 33:FK; 39:R0, Fk, BP1
+ ░░░░░░█████████       ████████▀░░░░░░   ─ Contact ────────────────────────────  | 2:FK, Bk; 8:R0; 33:FK; 39:R0, Fk, BP1
+ ░░░░░░ ███████    ▄██▀▀▀▀█████ ░░░░░░                                           | 2:FK, Bk; 9:R0; 33:FK; 39:R0, Fk, BP1
+ ░░░░░░ ███▀▀  ▀▀▀▀▀▀ ▀    ▀██  ░░░░░░   EMAIL   :       » brunoadele@gmail.com  | 2:FK, Bk; 9:R0; 33:FK; 39:R0, Fk, BP1
+ ░░░░░░  ██▄ ▄█████▀▀████▄ ▄▀  ░░░░░░░   GITHUB  :          » github.com/badele  | 2:FK, Bk; 10:R0; 32:FK; 39:R0, Fk, BP1
+ ░░░░░░░  ▀ ▄█████████████▄   ░░░░░░░░   LINKEDIN: » linkedin.com/in/brunoadele  | 2:FK, Bk; 11:R0; 31:FK; 39:R0, Fk, BP1
+ ░░░░░░░░    ▀▀██████████ ▀  ░░░░░░░░░                                           | 2:FK, Bk; 14:R0; 30:FK; 39:R0, Fk, BP1
+ ░░░░░░░░ ▀▄  █▀██▀█ ▀▀▀▀▀   ░░░░░░░░░   ─ Technologies acquises ──────────────  | 2:FK, Bk; 11:R0; 30:FK; 39:R0, Fk, BP1
+ ░░░░░░    ██▄  ▀           █  ░░░░░░░                                           | 2:FK, Bk; 12:R0; 32:FK; 39:R0, Fk, BP1
+ ░░   ▄▄▄█ █████▄        ▄▄▄█ ▄▄    ░░      Archlinux | Centos | Ubuntu | NixOS  | 2:FK, Bk; 7:R0, Fk; 12:R0; 31:Fk; 37:FK; 39:R0, Fk, BP1
+ ▄▄███████ ███████▄▄▄████████ ██████▄▄          Prometheus | Grafana | Influxdb  | 2:Bk; 12:R0; 31:Fk; 39:BP1
+ █████████ ▀████████████████▀ ████████             Kubernetes | Docker | Podman  | 2:Bk; 12:R0; 31:Fk; 39:BP1
+ ██████████ ▀██████████████▀ █████████               AWS | GCP | OVH | Scaleway  | 2:Bk; 13:R0; 30:Fk; 39:BP1
+ ████████████ ▀██████████▀ ███████████                Terraform | Helm | ArgoCD  | 2:Bk; 15:R0; 28:Fk; 39:BP1
+ ██████████████   ▀▀▀▀   █████████████                 Bash | Go | Python | SQL  | 2:Bk; 19:R0; 26:Fk; 39:BP1
+ █████████████████████████████████████                  CI|CD | Github | Gitlab  | 2:Bk; 39:BP1
+ █████████████████████████████████████                   IPv4 | IPv6 | Mikrotik  | 2:Bk; 39:BP1
+ █████████████████████████████████████                    InfluxDB | PostgreSQL  | 2:Bk; 39:BP1
+ █████████████████████████████████████                     Justfile | flake.nix  | 2:Bk; 39:BP1
+                                                                                 | 
+                                                                                 | 
+  ████ &#39;ai  commencé  très  jeune dans      █ █ █ █▀▀ ▀█▀ █▀█ █▀█ █ █▀█ █ █ █▀▀  | 
+    ██ l&#39;informatique, vers  1985 pour      █▀█ █ ▄▄█  █  █▄█ █▀▄ █ ▀▀█ █▄█ ██▄  | 
+ ██▄██ en  faire  mon  métier en 1998.   ──────────────────────────────────────  | 
+ ▀▀▀▀▀ D&#39;abord comme  développeur puis   ≡ 2024 - xxxx   Lead DevOps (Akaiko)    | 
+ comme Administrateur Système que l&#39;on   │ Gestion  de   la   CI   (du  dev  au  | 
+ nomme aujourd&#39;hui Devops.               │ déploiement). Monitoring de stack     | 
+                                         │                                       | 
+       Cela fait  28 ans  que j&#39;exerce   │   AWS | Kubernetes | Terraform | NIX  | 
+ce métier  avec la même  passion. J&#39;ai   │          Helm | Prometheus | Grafana  | 
+une forte  appétence  pour  la qualité   │                                       | 
+des produits que nous concevons, ainsi   │                                       | 
+que pour le partage  de mon expérience   ≡ 2021 - 2024   Lead DevOps (Seqone)    | 
+et l&#39;accompagnement des développeurs.    │ Gestion d&#39;infra hybride  (AWS / OVH)  | 
+                                         │ Gestion de CI Gitlab et amélioration  | 
+       Il m&#39;arrive souvent de dire que   │ des performances de la CI             | 
+chaque problème  a une solution. C&#39;est   │                                       | 
+pour cette raison  que je mets tout en   │     AWS | On-Premise | Ansible | NIX  | 
+oeuvre pour traiter les problématiques   │        Kubernetes | Helm | Terraform  | 
+que ce soit :                            │                                       | 
+                                         │                                       | 
+- Conception d&#39;architectures en accord   ≡ 2018 - 2021   Lead DevOps (Adagio)    | 
+  avec les prérequis techniques.         │ Gestion d&#39;infra GCP et gestion CI     | 
+                                         │                                       | 
+- Résolution des problématiques rencon-  │       GCP | Puppet | Gitlab | Github  | 
+  trées par les développeurs, qu&#39;elles   │                                       | 
+  soient   techniques   ou   liées  au   │                                       | 
+  déploiement.                           ≡ 2015 - 2018          DevOps (Hawk)    | 
+                                         │ Gestion d&#39;infra hybride  (AWS / OVH)  | 
+- Amélioration des performances allant   │ Gestion de  CI Github,  optimisation  | 
+  des applications jusqu&#39;aux systèmes.   │ des performances, conception infra    | 
+                                         │                                       | 
+                                         │           AWS | Terraform | InfluxDB  | 
+       Mes  compétences  sont  larges,   │                                       | 
+cela  va  du  développement,  système,   │                                       | 
+réseau, sécurité.                        ≡ 1998 - 2015 Dev, SysAdmin (Axilog)    | 
+                                         │ Developpement CRM en C#,gestion d&#39;un  | 
+                                         │ mini datacenter, 10 serveurs / 50 VM  | 
+                        -- Bruno Adelé   │ Conception infra.                     | 
+                                         │                                       | 
+                                                                                 | 
+─ Outils utilisés ────────────────────────────────────────────────────────────── | 
+                                                                                 | 
+  Ce  Curriculum Vitae  a  été  crée  avec  une  majorité  de mes  contributions | 
+  personnelles, devéloppé principallement en Go.                                 | 
+                                                                                 | 
+  neotex            * Nouveau format ANSI                                        | 
+  splitans          * Lecteur de fichier ANSI ou Neotex                          | 
+  ansi-compositor   * Compositeur ANSI                                           | 
+  termfolio         * Ce visualisateur                                           | 
+  dockercv          * Les sources de ce Curriculum Vitae                         | 
+  icy-draw          Outil de modelisation ANSI                                   | 
+  chafa             Conversion d&#39;image vers ANSI                                 | 
+  bit               Fonte ANSI                                                   | 
+                                                                                 | 
+  * Contribution personnelle                                                     | 
+                                                                                 | 
+                                                                                 | 
+                                                                                 | 
+                                                                                 | !ST&lt;Boot CV&gt;; !SA&lt;Bruno Adelé&gt;; !SGjesuislibre; !SD20260317; !SF80x25; !SI
+</pre>
+<pre id="ansi-output"></pre>
+<div id="options-bar">
+  <label>Zoom <input id="zoom-range" type="range" min="7" max="64" step="7" value="14"></label>
+  <label><input id="source-toggle" type="checkbox"> Source</label>
+</div>
+<script>
+(() => {
+  const palette = [
+    [0x00, 0x00, 0x00], [0xAA, 0x00, 0x00], [0x00, 0xAA, 0x00], [0xAA, 0x55, 0x00],
+    [0x00, 0x00, 0xAA], [0xAA, 0x00, 0xAA], [0x00, 0xAA, 0xAA], [0xAA, 0xAA, 0xAA],
+    [0x55, 0x55, 0x55], [0xFF, 0x55, 0x55], [0x55, 0xFF, 0x55], [0xFF, 0xFF, 0x55],
+    [0x55, 0x55, 0xFF], [0xFF, 0x55, 0xFF], [0x55, 0xFF, 0xFF], [0xFF, 0xFF, 0xFF]
+  ];
+
+  const defaultState = () => ({
+    fg: { type: 'standard', index: 7 },
+    bg: { type: 'standard', index: 0 },
+    dim: false,
+    italic: false,
+    underline: false,
+    blink: false,
+    reverse: false,
+    hidden: false,
+  });
+
+  const cloneState = (s) => ({
+    fg: { ...s.fg },
+    bg: { ...s.bg },
+    dim: s.dim,
+    italic: s.italic,
+    underline: s.underline,
+    blink: s.blink,
+    reverse: s.reverse,
+    hidden: s.hidden,
+  });
+
+  const fgMap = {
+    Fk: 0, Fr: 1, Fg: 2, Fy: 3, Fb: 4, Fm: 5, Fc: 6, Fw: 7,
+    FK: 8, FR: 9, FG: 10, FY: 11, FB: 12, FM: 13, FC: 14, FW: 15, FD: 7,
+  };
+  const bgMap = {
+    Bk: 0, Br: 1, Bg: 2, By: 3, Bb: 4, Bm: 5, Bc: 6, Bw: 7,
+    BK: 8, BR: 9, BG: 10, BY: 11, BB: 12, BM: 13, BC: 14, BW: 15, BD: 0,
+  };
+
+  const parseRGB = (code) => {
+    const hex = code.slice(1);
+    return [
+      parseInt(hex.slice(0, 2), 16),
+      parseInt(hex.slice(2, 4), 16),
+      parseInt(hex.slice(4, 6), 16),
+    ];
+  };
+
+  const indexedToRGB = (index) => {
+    if (index < 16) return palette[index];
+    if (index >= 232) {
+      const level = 8 + (index - 232) * 10;
+      return [level, level, level];
+    }
+    const i = index - 16;
+    const r = Math.floor(i / 36);
+    const g = Math.floor((i % 36) / 6);
+    const b = i % 6;
+    const conv = (v) => (v === 0 ? 0 : 55 + v * 40);
+    return [conv(r), conv(g), conv(b)];
+  };
+
+  const colorToCSS = (color) => {
+    if (!color) return null;
+    if (color.type === 'standard') return palette[color.index % palette.length];
+    if (color.type === 'rgb') return [color.r, color.g, color.b];
+    if (color.type === 'indexed') return indexedToRGB(color.index);
+    return null;
+  };
+
+  const rgbString = (rgb) => 'rgb(' + rgb[0] + ', ' + rgb[1] + ', ' + rgb[2] + ')';
+  const toHex = (v) => v.toString(16).padStart(2, '0').toUpperCase();
+  const rgbToHex = (rgb) => toHex(rgb[0]) + toHex(rgb[1]) + toHex(rgb[2]);
+
+  const applyCode = (code, state, paletteMap) => {
+    if (code === 'R0') {
+      const next = defaultState();
+      Object.assign(state, next);
+      return;
+    }
+    if (fgMap[code] !== undefined) {
+      state.fg = { type: 'standard', index: fgMap[code] };
+      return;
+    }
+    if (bgMap[code] !== undefined) {
+      state.bg = { type: 'standard', index: bgMap[code] };
+      return;
+    }
+    if (code === 'EM') { state.dim = true; return; }
+    if (code === 'Em') { state.dim = false; return; }
+    if (code === 'EI') { state.italic = true; return; }
+    if (code === 'Ei') { state.italic = false; return; }
+    if (code === 'EU') { state.underline = true; return; }
+    if (code === 'Eu') { state.underline = false; return; }
+    if (code === 'EB') { state.blink = true; return; }
+    if (code === 'Eb') { state.blink = false; return; }
+    if (code === 'ER') { state.reverse = true; return; }
+    if (code === 'Er') { state.reverse = false; return; }
+    if (/^[FB][0-9A-Fa-f]{6}$/.test(code)) {
+      const rgb = parseRGB(code);
+      if (code[0] === 'F') state.fg = { type: 'rgb', r: rgb[0], g: rgb[1], b: rgb[2] };
+      else state.bg = { type: 'rgb', r: rgb[0], g: rgb[1], b: rgb[2] };
+      return;
+    }
+    if (/^[FB]P\d+$/.test(code)) {
+      const idx = parseInt(code.slice(2), 10);
+      if (!paletteMap || !paletteMap.has(idx)) {
+        throw new Error('Undefined palette index ' + idx);
+      }
+      const rgb = paletteMap.get(idx);
+      if (code[0] === 'F') state.fg = { type: 'rgb', r: rgb[0], g: rgb[1], b: rgb[2] };
+      else state.bg = { type: 'rgb', r: rgb[0], g: rgb[1], b: rgb[2] };
+      return;
+    }
+    if (/^[FB]\d{1,3}$/.test(code)) {
+      const value = parseInt(code.slice(1), 10);
+      if (Number.isNaN(value)) return;
+      if (value < 0 || value > 255) return;
+      if (code[0] === 'F') state.fg = { type: 'indexed', index: value };
+      else state.bg = { type: 'indexed', index: value };
+    }
+  };
+
+  const parseHoverColor = (code, paletteMap) => {
+    // HF / HB standard (HFk, HFr...), RGB (HFRRGGBB/HBRRGGBB), indexed (HF123)
+    if (!code || code.length < 2) return null;
+    const kind = code.slice(0, 2);
+    const body = code.slice(2);
+    const isFg = kind === 'HF';
+    const isBg = kind === 'HB';
+    if (!isFg && !isBg) return null;
+
+    const stdMap = {
+      k: 0, r: 1, g: 2, y: 3, b: 4, m: 5, c: 6, w: 7,
+      K: 8, R: 9, G: 10, Y: 11, B: 12, M: 13, C: 14, W: 15,
+    };
+
+    if (body.length === 1 && stdMap[body] !== undefined) {
+      return { type: 'standard', index: stdMap[body], target: isFg ? 'fg' : 'bg' };
+    }
+
+    if (body.length === 6 && /^[0-9A-Fa-f]{6}$/.test(body)) {
+      return {
+        type: 'rgb',
+        r: parseInt(body.slice(0, 2), 16),
+        g: parseInt(body.slice(2, 4), 16),
+        b: parseInt(body.slice(4, 6), 16),
+        target: isFg ? 'fg' : 'bg',
+      };
+    }
+
+    if (/^P\d+$/.test(body)) {
+      const idx = parseInt(body.slice(1), 10);
+      if (!paletteMap || !paletteMap.has(idx)) {
+        throw new Error('Undefined palette index ' + idx);
+      }
+      const rgb = paletteMap.get(idx);
+      return {
+        type: 'rgb',
+        r: rgb[0],
+        g: rgb[1],
+        b: rgb[2],
+        target: isFg ? 'fg' : 'bg',
+      };
+    }
+
+    if (/^\d{1,3}$/.test(body)) {
+      const value = parseInt(body, 10);
+      if (value >= 0 && value <= 255) {
+        return { type: 'indexed', index: value, target: isFg ? 'fg' : 'bg' };
+      }
+    }
+    return null;
+  };
+
+  const parseSequences = (seqLine, paletteMap) => {
+    const styles = [];
+    if (!seqLine) return styles;
+    for (const raw of seqLine.split(';')) {
+      const entry = raw.trim();
+      if (!entry || entry.startsWith('!')) continue;
+      const parts = entry.split(':');
+      if (parts.length < 2) continue;
+      const position = parseInt(parts[0], 10) - 1;
+      if (Number.isNaN(position)) continue;
+      const codes = parts.slice(1).join(':').split(',').map((c) => c.trim()).filter(Boolean);
+      const style = { position, codes: [], hyperlink: null, unlink: false, hoverFg: null, hoverBg: null };
+      for (const code of codes) {
+        if (code === 'Hl') { style.unlink = true; continue; }
+        if (code.startsWith('HL:<') && code.endsWith('>')) {
+          style.hyperlink = { url: code.slice(4, -1) };
+          continue;
+        }
+        const hover = parseHoverColor(code, paletteMap);
+        if (hover) {
+          if (hover.target === 'fg') style.hoverFg = hover;
+          else style.hoverBg = hover;
+          continue;
+        }
+        style.codes.push(code);
+      }
+      if (style.codes.length || style.hyperlink || style.unlink || style.hoverFg || style.hoverBg) styles.push(style);
+    }
+    styles.sort((a, b) => a.position - b.position);
+    return styles;
+  };
+
+  const extractWidth = (raw, normalized) => {
+    const globalMatch = raw.match(/!W=?(\d+)(?:\/(\d+))?/);
+    if (globalMatch) return parseInt(globalMatch[2] || globalMatch[1], 10);
+    for (let i = 0; i < normalized.length; i += 1) {
+      const line = normalized[i];
+      const idx = line.indexOf(' | ');
+      if (idx < 0) continue;
+      const seq = line.slice(idx + 3);
+      const match = seq.match(/!W=?(\d+)(?:\/(\d+))?/);
+      if (match) return parseInt(match[2] || match[1], 10);
+    }
+    return null;
+  };
+
+  const parsePaletteEntry = (entry, paletteMap) => {
+    if (!entry.startsWith('!P')) return;
+    const body = entry.slice(2).trim();
+    const eqIndex = body.indexOf('=');
+    if (eqIndex < 0) {
+      throw new Error('Invalid palette entry (missing =): ' + entry);
+    }
+    const idxStr = body.slice(0, eqIndex).trim();
+    if (!/^\d+$/.test(idxStr)) {
+      throw new Error('Invalid palette index: ' + idxStr);
+    }
+    let value = body.slice(eqIndex + 1).trim();
+    if (value.startsWith('<')) {
+      if (!value.endsWith('>')) {
+        throw new Error('Invalid palette entry (missing >): ' + entry);
+      }
+      value = value.slice(1, -1);
+    }
+    if (value.startsWith('#')) {
+      value = value.slice(1);
+    }
+    if (!/^[0-9A-Fa-f]{6}$/.test(value)) {
+      throw new Error('Invalid palette value: ' + value);
+    }
+    const rgb = [
+      parseInt(value.slice(0, 2), 16),
+      parseInt(value.slice(2, 4), 16),
+      parseInt(value.slice(4, 6), 16),
+    ];
+    paletteMap.set(parseInt(idxStr, 10), rgb);
+  };
+
+  const collectPaletteEntries = (seqPart, paletteMap) => {
+    if (!seqPart) return;
+    for (const raw of seqPart.split(';')) {
+      const entry = raw.trim();
+      if (!entry || !entry.startsWith('!P')) continue;
+      parsePaletteEntry(entry, paletteMap);
+    }
+  };
+
+  const parseNeotex = (raw) => {
+    const lines = [];
+    const paletteMap = new Map();
+    const normalized = raw.replace(/\r\n?/g, '\n').split('\n');
+    const width = extractWidth(raw, normalized);
+    let seenWidth = false;
+
+    for (let i = 0; i < normalized.length; i += 1) {
+      const line = normalized[i];
+      if (!line) continue;
+
+      const sepIndex = line.lastIndexOf(' | ');
+      if (sepIndex < 0) continue;
+      const seqPart = line.slice(sepIndex + 3);
+      collectPaletteEntries(seqPart, paletteMap);
+      if (!seenWidth) {
+        if (!seqPart.includes('!W')) continue;
+        seenWidth = true;
+      }
+
+      if (width !== null) {
+        const runes = Array.from(line);
+        const sepStart = width;
+        const sepEnd = width + 3;
+        if (runes.length >= sepEnd) {
+          const sep = runes.slice(sepStart, sepEnd).join('');
+          if (sep === ' | ') {
+            const text = runes.slice(0, width).join('');
+            const seq = runes.slice(sepEnd).join('');
+            lines.push({ text, seq });
+            continue;
+          }
+        }
+        if (sepIndex >= 0) {
+          lines.push({ text: line.slice(0, sepIndex), seq: seqPart });
+          continue;
+        }
+      }
+
+      lines.push({ text: line.slice(0, sepIndex), seq: seqPart });
+    }
+    return { lines, palette: paletteMap };
+  };
+
+  let showSource = false;
+
+  const renderLine = (text, seqLine, state, hyperlink, hoverFgState, hoverBgState, paletteMap) => {
+    const styles = parseSequences(seqLine, paletteMap);
+    const result = [];
+    const runes = Array.from(text);
+    let cursor = 0;
+    let current = cloneState(state);
+    let currentLink = hyperlink;
+    let currentHoverFg = hoverFgState || null;
+    let currentHoverBg = hoverBgState || null;
+
+    const pushRun = (until) => {
+      if (until <= cursor) return;
+      const segment = runes.slice(cursor, until).join('');
+      result.push({ text: segment, state: cloneState(current), hyperlink: currentLink, hoverFg: currentHoverFg, hoverBg: currentHoverBg });
+      cursor = until;
+    };
+
+    for (const change of styles) {
+      const pos = Math.min(change.position, runes.length);
+      pushRun(pos);
+      const nextState = cloneState(current);
+      for (const code of change.codes) applyCode(code, nextState, paletteMap);
+      current = nextState;
+
+      if (change.hoverFg) currentHoverFg = change.hoverFg;
+      if (change.hoverBg) currentHoverBg = change.hoverBg;
+
+      if (change.unlink) currentLink = null;
+      if (change.hyperlink) {
+        currentLink = change.hyperlink;
+        // store hover colors on the active link
+        if (currentHoverFg) currentLink.hoverFg = currentHoverFg;
+        if (currentHoverBg) currentLink.hoverBg = currentHoverBg;
+      }
+    }
+    pushRun(runes.length);
+    return { segments: result, state: current, hyperlink: currentLink, hoverFg: currentHoverFg, hoverBg: currentHoverBg };
+  };
+
+  const render = () => {
+    const source = document.getElementById('neo-source');
+    const target = document.getElementById('ansi-output');
+    if (!source || !target) return;
+    if (showSource) {
+      target.textContent = source.textContent || '';
+      return;
+    }
+    const { lines, palette: paletteMap } = parseNeotex(source.textContent || '');
+    let state = defaultState();
+    let hyperlink = null;
+    let hoverFg = null;
+    let hoverBg = null;
+    const frag = document.createDocumentFragment();
+
+    for (let i = 0; i < lines.length; i += 1) {
+      const { text, seq } = lines[i];
+      const { segments, state: nextState, hyperlink: nextLink, hoverFg: nextHoverFg, hoverBg: nextHoverBg } = renderLine(text, seq, state, hyperlink, hoverFg, hoverBg, paletteMap);
+      for (const part of segments) {
+        const el = part.hyperlink ? document.createElement('a') : document.createElement('span');
+        el.textContent = part.text;
+        el.classList.add('ansi-cell');
+        applyColorClasses(el, part.state.fg, false, true);
+        applyColorClasses(el, part.state.bg, false, false);
+        if (part.state.italic) el.classList.add('ansi-italic');
+        if (part.state.underline) el.classList.add('ansi-underline');
+        if (part.state.blink) el.classList.add('ansi-blink');
+        if (part.state.dim) el.classList.add('ansi-dim');
+        if (part.state.hidden) el.classList.add('ansi-hidden');
+        if (part.hyperlink) {
+          el.href = part.hyperlink.url;
+          el.target = '_blank';
+          el.rel = 'noopener noreferrer';
+          el.classList.add('ansi-link');
+          applyColorClasses(el, part.hoverFg, true, true);
+          applyColorClasses(el, part.hoverBg, true, false);
+        }
+        frag.appendChild(el);
+      }
+      if (i < lines.length - 1) frag.appendChild(document.createTextNode('\n'));
+      state = nextState;
+      hyperlink = nextLink;
+      hoverFg = nextHoverFg;
+      hoverBg = nextHoverBg;
+    }
+
+    target.replaceChildren(frag);
+  };
+
+  const fgCodes = ['Fk','Fr','Fg','Fy','Fb','Fm','Fc','Fw','FK','FR','FG','FY','FB','FM','FC','FW'];
+  const bgCodes = ['Bk','Br','Bg','By','Bb','Bm','Bc','Bw','BK','BR','BG','BY','BB','BM','BC','BW'];
+
+  const dynamicRules = new Set();
+  let dynamicStyleEl = null;
+
+  const ensureDynamicStyle = () => {
+    if (dynamicStyleEl) return dynamicStyleEl;
+    dynamicStyleEl = document.createElement('style');
+    dynamicStyleEl.id = 'dynamic-palette';
+    document.head.appendChild(dynamicStyleEl);
+    return dynamicStyleEl;
+  };
+
+  const addDynamicRule = (cls, prop, rgb) => {
+    const key = cls + prop + rgb.join(',');
+    if (dynamicRules.has(key)) return;
+    dynamicRules.add(key);
+    const styleEl = ensureDynamicStyle();
+    styleEl.appendChild(document.createTextNode('.' + cls + ' { ' + prop + ': ' + rgbString(rgb) + '; }\n'));
+  };
+
+  const classForColor = (color, isHover, isFg) => {
+    if (!color) return null;
+    if (color.type === 'standard') {
+      const codes = isFg ? fgCodes : bgCodes;
+      const base = codes[color.index % codes.length];
+      return isHover ? (isFg ? 'H' + base : 'H' + base) : base;
+    }
+    const rgb = colorToCSS(color) || [255, 255, 255];
+    const hex = rgbToHex(rgb);
+    const prefix = isHover ? (isFg ? 'HF_' : 'HB_') : (isFg ? 'F_' : 'B_');
+    const cls = prefix + hex;
+    const prop = isHover ? (isFg ? '--hover-fg' : '--hover-bg') : (isFg ? '--fg' : '--bg');
+    addDynamicRule(cls, prop, rgb);
+    return cls;
+  };
+
+  const applyColorClasses = (el, color, isHover, isFg) => {
+    const cls = classForColor(color, isHover, isFg);
+    if (cls) el.classList.add(cls);
+  };
+
+  const setupControls = () => {
+    const target = document.getElementById('ansi-output');
+    const zoom = document.getElementById('zoom-range');
+    const sourceToggle = document.getElementById('source-toggle');
+
+    const applyZoom = () => {
+      const size = zoom ? Number(zoom.value) || 14 : 14;
+      if (target) {
+        target.style.fontSize = size + 'px';
+        target.style.lineHeight = size + 'px';
+      }
+    };
+
+    if (zoom) {
+      zoom.addEventListener('input', applyZoom);
+      applyZoom();
+    }
+
+    if (sourceToggle) {
+      showSource = sourceToggle.checked;
+      sourceToggle.addEventListener('change', () => {
+        showSource = sourceToggle.checked;
+        render();
+      });
+    }
+  };
+
+  setupControls();
+  render();
+})();
+</script>
+</body>
+</html>
