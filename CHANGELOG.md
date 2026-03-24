@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/badele/dockercv/compare/v1.6.0...v1.7.0) (2026-03-24)
+
+
+### Features
+
+* add english section ([#15](https://github.com/badele/dockercv/issues/15)) ([2f5ff12](https://github.com/badele/dockercv/commit/2f5ff12ac490ad480289ccf37df47981d5505567))
+
 ## [1.6.0](https://github.com/badele/dockercv/compare/v1.5.0...v1.6.0) (2026-03-23)
 
 
