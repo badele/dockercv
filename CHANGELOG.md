@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.1](https://github.com/badele/dockercv/compare/v1.7.0...v1.7.1) (2026-03-24)
+
+
+### Bug Fixes
+
+* french black and white link ([#17](https://github.com/badele/dockercv/issues/17)) ([d1ffce5](https://github.com/badele/dockercv/commit/d1ffce54b6ab7a6ec1b62d5ffe383eaf05c99ad2))
+
 ## [1.7.0](https://github.com/badele/dockercv/compare/v1.6.0...v1.7.0) (2026-03-24)
 
 
