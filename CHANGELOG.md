@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/badele/dockercv/compare/v1.7.1...v1.8.0) (2026-03-25)
+
+
+### Features
+
+* add CRT filter, home link, and fix internal link targets ([#19](https://github.com/badele/dockercv/issues/19)) ([18dc7d1](https://github.com/badele/dockercv/commit/18dc7d1a5f5bd17daff3c4f27995617cb70e8e0d))
+
 ## [1.7.1](https://github.com/badele/dockercv/compare/v1.7.0...v1.7.1) (2026-03-24)
 
 
