@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/badele/dockercv/compare/v1.8.0...v1.8.1) (2026-03-27)
+
+
+### Bug Fixes
+
+* typo in Araiko company name ([#21](https://github.com/badele/dockercv/issues/21)) ([c670e31](https://github.com/badele/dockercv/commit/c670e312a7dee4bb0391f8492454498801ec9337))
+
 ## [1.8.0](https://github.com/badele/dockercv/compare/v1.7.1...v1.8.0) (2026-03-25)
 
 
